@@ -1,0 +1,63 @@
+.additional_info-item label{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.additional_info-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0, .3);
+    margin: 1em;
+    border-radius: 11px;
+}
+
+.additional_info{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item-sample, .item-uploaded{
+    max-width: 190px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: .8em;
+}
+
+.item-sample img, .item-uploaded img{
+    width: 100%;
+    object-fit: contain;
+    max-height: 120px;
+}
+
+.image_in_modal img{
+    width: 100%;
+}
+
+.item-sample{
+    position: relative;
+}
+
+.item-sample:hover:after{
+    content: 'click para visualizar';
+    position: absolute;
+    text-align: center;
+    top: 43%;
+    bottom: 42%;
+    left: 10%;
+    right: 10%;
+    z-index: 999;
+    background: rgba(0,0,0, .6);
+}
+
+.additional_info-item label input[type="file"]{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}

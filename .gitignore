@@ -5,5 +5,5 @@ app/vendor/
 app/composer.lock
 app/wt_config.yml
 app/.env
-docker/mariadb
+docker/mariadb/data
 app/var/

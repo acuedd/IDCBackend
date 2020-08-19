@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "description": "Bono Familia App",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/profiles/wallet/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "App de Bono Familiar",
+  "short_name": "Bono Familiar",
+  "start_url": "https://bonofamilia.com.gt/"
+}

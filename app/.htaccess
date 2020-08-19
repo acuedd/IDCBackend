@@ -1,0 +1,64 @@
+SetEnv HTACCESS on
+
+<IfModule mod_headers.c>
+	# Cache de contenido
+
+	# 1 YEAR
+	<FilesMatch "\.(ico|pdf|flv)$">
+		Header set Cache-Control "max-age=29030400, public"
+	</FilesMatch>
+
+	# 2 WEEKS
+	<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+		Header set Cache-Control "max-age=1209600, public"
+	</FilesMatch>
+
+	# 1 WEEK
+	<FilesMatch "\.(xml|txt|css|js)$">
+		Header set Cache-Control "max-age=604800, proxy-revalidate"
+	</FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	# Le digo que siga symlinks
+	Options +FollowSymLinks
+
+	# Activar RewriteEngine
+	RewriteEngine On
+
+	# Ignoro los URLS que si existan como tal en el filesystem
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+
+	# Reescribir la URL solicitada por el usuario
+	# Links publicos
+	#   Entrada:  fp/pagina/
+	#   Salida: index.php?page=pagina
+	#   Incluye soporte para Internet Explorer (que da problemas con los onclick pues concatena N fp's)
+	RewriteRule ^(fp){1,1}/?$ index.php [L]
+	RewriteRule ^(fp/)+/?$ index.php [L]
+	RewriteRule ^(fp/)+(\w+)/?$ index.php?page=$2 [L]
+	RewriteRule ^(fp/)+(\w+)/(\w+)/(\w+)/?$ index.php?page=$2&$3=$4 [L]
+	RewriteRule ^(fp/)+(\w+)/(\w+)/(\w+)/(\w+)/(\w+)/?$ index.php?page=$2&$3=$4&$5=$6[L]
+
+	# Include de Javascript
+	#   Entrada: jq/nombreDeLibreria, jqueryloader.php se encarga de interpretarlo y construir el path
+	#   Salida:  jqueryloader.php?file=nombreDeLibreria
+	#   Incluye el FIX del internet explorer que, cuando incluyo un jq desde un fp, anida las dos cosas...
+	RewriteRule ^(fp/)*(jq/)+([\w.]+)/?$ jqueryloader.php?file=$3 [L]
+    RewriteRule ^(fp/)*(jq/)+(profile/)+([\w.]+)/([\w.]+)/?$ jqueryloader.php?profile=$4&file=$5 [L]
+    RewriteRule ^(fp/)*(jq/)+(theme/)+([\w.]+)/(profile/)+([\w.]+)/([\w.]+)/?$ jqueryloader.php?theme=$4&profile=$6&file=$7 [L]
+    RewriteRule ^(fp/)*(jq/)+(theme/)+([\w.]+)/([\w.]+)/?$ jqueryloader.php?theme=$4&file=$5 [L]
+
+    # Soporte para el modulo de cloud - antes habia que elegir una instancia con url/index.php/sl/llave o url/index.php/sl/llave.html
+    # RewriteRule ^(sl/)+([-_\.0-9a-zA-Z]+)/?$ index.php/sl/$2 [L]
+    # RewriteRule ^(sl/)+([-_\.0-9a-zA-Z]+)/{1,1}([-_\.0-9a-zA-Z]+)/?$ $3/sl/$2 [L]
+    RewriteRule ^(sl/)+([-_\.0-9a-zA-Z]+)/?$ index.php?cldmd=g&sl=$2 [L]
+    RewriteRule ^(sl/)+([-_\.0-9a-zA-Z]+)/{1,1}([-_\.0-9a-zA-Z]+)/?$ $3?cldmd=g&sl=$2 [L]
+    php_value upload_max_filesize 30M
+    php_value post_max_size 30M
+    <IfModule mod_php7.c>
+        php_value memory_limit 512M
+
+    </IfModule>
+</IfModule>

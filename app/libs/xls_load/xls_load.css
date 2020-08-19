@@ -1,0 +1,149 @@
+/**
+ * Author: Alexander Flores
+ * Date: 14/09/2017
+ * Version: 0.1
+ */
+.xls-msg{
+    margin-top: 10px;
+}
+
+input[type=file] > .inputfile-xls, .inputfile-xls{
+    display: none !important;
+}
+
+.inputfile-xls + label {
+    max-width: 100%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-xls:focus + label,
+.inputfile-xls.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile-xls + label i {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile-xls + label {
+    color: #150A57;
+}
+
+.inputfile-xls + label {
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: 0;
+}
+
+.inputfile-xls:focus + label,
+.inputfile-xls.has-focus + label,
+.inputfile-xls + label:hover {
+    border-color: #375FA4;
+}
+
+.inputfile-xls + label span,
+.inputfile-xls + label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-xls + label span {
+    width: 250px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-xls + label strong {
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #150A57;
+    display: inline-block;
+}
+
+.inputfile-xls:focus + label strong,
+.inputfile-xls.has-focus + label strong,
+.inputfile-xls + label:hover strong {
+    background-color: #375FA4;
+}
+
+@media screen and (max-width: 50em) {
+    .inputfile-xls + label strong {
+        display: block;
+    }
+}
+.xls-msg .progress-bar{
+    background-color: #5cb85c;
+}
+
+.xls-step button.pro-validate,
+.xls-step button.pro-save{
+    float: right;
+    margin: 0 10px;
+    min-width: 145px;
+}
+
+.xls-step button.pro-validate i,
+.xls-step button.pro-save i{
+    margin-left: 3px;
+    margin-top: 2px;
+}
+.xls-step > div{
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #150A57;
+}
+
+.xls-step div button,
+.xls-step div button i{
+    float: right;
+}
+.xls-step div button{
+    margin: 0 10px;
+    min-width: 145px;
+}
+.xls-step div button i{
+    margin-left: 3px;
+    margin-top: 2px;
+}
+.xls-step button.pro-validate i.fa-spinner,
+.xls-step button.pro-save i.fa-spinner,
+.xls-step div button i.fa-spinner{
+    color: #150A57;
+    animation:spin 900ms linear infinite;
+}
+.xls-step button.pro-validate i.fa-check-circle,
+.xls-step button.pro-save i.fa-check-circle,
+.xls-step div button i.fa-check-circle{
+    color: #5cb85c;
+}
+.xls-step button.pro-validate i.fa-times-circle,
+.xls-step button.pro-save i.fa-times-circle,
+.xls-step div button i.fa-times-circle{
+    color: #d9534f;
+}
+
+@keyframes spin {
+    100% {
+        transform:rotate(360deg);
+    }
+}

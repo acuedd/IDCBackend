@@ -1,0 +1,80 @@
+{
+  "name": "genius/hml",
+  "description": "Proyecto to control of quotes",
+  "type": "project",
+  "keywords": [
+    "ardakilic",
+    "arda",
+    "kilicdagi",
+    "silex",
+    "laravel",
+    "eloquent",
+    "skeleton",
+    "phpmig",
+    "migration",
+    "hodor"
+  ],
+  "homepage": "http://ventas.tigo.com.gt/v2",
+  "license": "shareware",
+  "authors": [
+    {
+      "name": "Edward Acu",
+      "email": "eacu@homeland.com.gt"
+    },
+    {
+      "name": "Nelson Matul",
+      "email": "nmatul@homeland.com.gt"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "guzzlehttp/guzzle": "~6.5.3",
+    "symfony/yaml": "~2.8.52",
+    "symfony/console": "~2.8.52",
+    "kint-php/kint": "^2.2",
+    "davedevelopment/phpmig": "^1.7.0",
+    "delight-im/file-upload": "^1.2.0",
+    "cebe/markdown": "~1.2.1",
+    "mpdf/mpdf": "^7.1.9",
+    "vlucas/phpdotenv": "^3.6.3",
+    "nette/mail": "^2.4.6",
+    "phpmailer/phpmailer": "^6.1.5",
+    "netresearch/jsonmapper": "^2.1",
+    "pimple/pimple": "^3.3",
+    "illuminate/database": "^5.6",
+    "symfony/http-foundation": "^5.1"
+  },
+  "require-dev": {
+    "filp/whoops": "~1",
+    "symfony/var-dumper": "~2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "core/",
+      "Modules\\": "Modules/"
+    }
+  },
+  "suggest": {
+    "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
+    "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+    "league/oauth2-server": "A spec compliant, secure by default PHP OAuth 2.0 Server (~4.1).",
+    "predis/predis": "Flexible and feature-complete PHP client library for Redis (~1.0)",
+    "league/flysystem": "Abstraction for local and remote filesystems (~1.0).",
+    "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+    "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0)."
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "php": "7.3",
+    "platform": {
+      "php": "7.3"
+    }
+  },
+  "scripts": {
+    "start" : "composer install",
+    "post-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env'); \""
+    ],
+    "refresh-database": "php homeland phpmig:migrate"
+  }
+}

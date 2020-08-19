@@ -1,0 +1,16 @@
+/*
+menu : #1c2637;
+elemento : #1a2226;
+elemento_menu: #2c3b41;
+titulo: #2e4e78;*/
+
+.color-menu_color{color: #1c2637;}
+.color-menu_background{background: #1c2637;}
+.main-sidebar{ background: #1c2637 !important;} .navbar-static-top, .fa-bars{ background: #1c2637 !important;} .main-header > a{ background: none !important;}
+.color-menu-elements_color{color: #2c3b41;}
+.color-menu-elements_background{background: #2c3b41;}
+.treeview>ul{ background: #2c3b41 !important;}
+.color-menu-active_color{color: #1a2226;}
+.color-menu-active_background{background: #1a2226;}
+.menu-open > a, .sidebar-menu > .header{background: #1a2226 !important;} .treeview > a > span:hover{background: #1a2226 !important;} .treeview>a:hover{background: #1a2226 !important;} .treeview-menu > li > a:hover{background: #1a2226 !important;}
+

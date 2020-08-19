@@ -1,0 +1,18 @@
+thead{
+    background: #D0DEF8;
+}
+
+th{
+    text-transform: capitalize;
+}
+
+input[type="search"]{
+    padding: .3em .6em;
+    outline: none;
+    border-radius: 22px;
+    border: 1px solid rgba(0,0,0, .3);
+}
+.paginate_button{
+    border: 1px solid rgba(0,0,0, .3);
+    background: transparent !important;
+}

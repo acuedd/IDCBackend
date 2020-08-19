@@ -1,0 +1,51 @@
+body {
+    background : #D5E2EE;
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : Black;
+}
+
+td {
+    background : white;
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : Black;
+}
+
+.maintable {
+    border : none;
+}
+
+.topbar {
+    background : black;
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 24px;
+    font-weight : bold;
+    color : white;
+    font-style : italic;
+}
+
+.leftpanel {
+    background : #F5F5F5;
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : Black;
+    border : 1px solid Silver;
+}
+
+INPUT, TEXTAREA, SELECT {
+    background : #FFFFFA;
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : Navy;
+    border : 1px solid #708090;
+}
+a {
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : #00008B;
+    text-decoration : none;
+}
+a:hover {
+    color : #B22222;
+}

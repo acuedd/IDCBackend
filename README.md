@@ -39,6 +39,19 @@ Starting genius2_app_1 ... done
 
 ```
 
+**Nota:** Si se desea modificar el nombre de la base de datos default y los puertos donde se quiere escuchar los servicios
+entonces modificar el archivo .env que se encuentra en el directorio raíz, ahí encontrá la configuración default de la siguiente 
+manera (es importante no dejar espacios en blanco en las últimas versiones de docker): 
+```
+DATABASE_NAME=<YOUR_DB_NAME>
+DATABASE_USER=<YOUR_USER>
+DATABASE_PASSWORD=<YOUR_PASS>
+DATABASE_ROOT_PASSWORD=<YOUR_PASS>
+HTTP_PORT=80
+HTTPS_PORT=443
+LOCAL_USER=root:root
+```
+
 Para revisar el estado de los contanedores: 
 ```
 [root@centos]#  docker ps 
@@ -173,20 +186,20 @@ Una vez instalado composer, configurar las variables de entorno para conexión co
            MYSQL_DATABASE: '<YOUR_DATABASE>'
    ```
    
-* Es necesario colocar como host el nombre del service, en este caso mariadb
-
+* Es necesario colocar como host el nombre del service de base de datos, en este caso mariadb
+(es importante no dejar espacios en blanco en las últimas versiones de docker)
 ```
-DEBUG           = 1
-HML_DBTYPE      = 'mysqli'
-HML_DATABASE    = '<YOUR_DATABASE>'
-HML_HOST        = 'mariadb'
-HML_PREFIX      = 'wt'
-HML_USER        = 'root'
-HML_PASS        = '<YOUR_PASS>'
-HML_TIMEZONE    = 'America/Guatemala'
-HML_ENVIROMENT  = 'tester'
-HML_VERSION_APP = '2.2.3'
-HML_DBENGINE    = 'innodb' 
+DEBUG=1
+HML_DBTYPE='mysqli'
+HML_DATABASE='<YOUR_DATABASE>'
+HML_HOST='mariadb'
+HML_PREFIX='wt'
+HML_USER='root'
+HML_PASS='<YOUR_PASS>'
+HML_TIMEZONE='America/Guatemala'
+HML_ENVIROMENT='tester'
+HML_VERSION_APP='2.2.3'
+HML_DBENGINE='innodb' 
 ```
 
 Configurar la base de datos con el siguiente comando:
@@ -200,12 +213,14 @@ Configurar la base de datos con el siguiente comando:
 
 Ingresar en el navegador al localhost y se deberá visualizar la ventana de **No disponible** 
 
-**Nota:** 
+**Nota:** Las configuraciones de tíldes y charset ya se encuentran realizadas en el contenedor pero si aún así persiste 
+el error se puede proceder a: 
+ 
 * Si al momento de entrar a la url ya se tiene abierto el IDE con el proyecto y sin embargo devuelve un error 500, revisar
 que el encoding del proyecto (en el IDE) este como iso8859-1, descartar cualquier cambio en la branch y reintentar el procedimiento anterior.
 
 * Si la tíldes o ñ no se muestran bien (Para estas opciones se debe reiniciar el servicio httpd): 
-  * También se puede revisar el php.ini en el **webapp**, buscar y modifcar modificarlo a ISO-8859-1.
+  * También se puede revisar el php.ini en el **webapp**, buscar el charset y modificarlo a ISO-8859-1.
   * Revisar en httpd.conf que el charset este de la misma forma como ISO-8859-1
 
 Se recomienda utilizar herramientas como navicat o phpMyAdmin para correr los sql, sin embargo al momento de ejecutarlos 
@@ -217,7 +232,7 @@ seleccionar el encoding como iso8859-1
  
 ; PHP's default character set is set to UTF-8.
 ; http://php.net/default-charset
-default_charset = "UTF-8"
+default_charset = "iso8859-1"
 
 ```
 

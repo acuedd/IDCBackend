@@ -1,0 +1,152 @@
+/**
+ * Author: Alexander Flores
+ * Date: 14/09/2017
+ * Version: 0.1
+ */
+.csv-msg{
+    margin-top: 10px;
+}
+
+input[type=file] > .inputfile-csv, .inputfile-csv{
+    display: none !important;
+}
+
+.inputfile-csv + label {
+    max-width: 100%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-csv:focus + label,
+.inputfile-csv.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile-csv + label i {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile-csv + label {
+    color: #150A57;
+}
+
+.inputfile-csv + label {
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: 0;
+}
+
+.inputfile-csv:focus + label,
+.inputfile-csv.has-focus + label,
+.inputfile-csv + label:hover {
+    border-color: #375FA4;
+}
+
+.inputfile-csv + label span,
+.inputfile-csv + label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-csv + label span {
+    width: 250px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-csv + label strong {
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #150A57;
+    display: inline-block;
+}
+
+.inputfile-csv:focus + label strong,
+.inputfile-csv.has-focus + label strong,
+.inputfile-csv + label:hover strong {
+    background-color: #375FA4;
+}
+
+@media screen and (max-width: 50em) {
+    .inputfile-csv + label strong {
+        display: block;
+    }
+}
+.csv-msg .progress-bar{
+    background-color: #5cb85c;
+}
+ .progress{
+    border: solid 1px;
+}
+
+.csv-step button.pro-validate,
+.csv-step button.pro-save{
+    float: right;
+    margin: 0 10px;
+    min-width: 145px;
+}
+
+.csv-step button.pro-validate i,
+.csv-step button.pro-save i{
+    margin-left: 3px;
+    margin-top: 2px;
+}
+.csv-step > div{
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #150A57;
+}
+
+.csv-step div button,
+.csv-step div button i{
+    float: right;
+}
+.csv-step div button{
+    margin: 0 10px;
+    min-width: 145px;
+}
+.csv-step div button i{
+    margin-left: 3px;
+    margin-top: 2px;
+}
+.csv-step button.pro-validate i.fa-spinner,
+.csv-step button.pro-save i.fa-spinner,
+.csv-step div button i.fa-spinner{
+    color: #150A57;
+    animation:spin 900ms linear infinite;
+}
+.csv-step button.pro-validate i.fa-check-circle,
+.csv-step button.pro-save i.fa-check-circle,
+.csv-step div button i.fa-check-circle{
+    color: #5cb85c;
+}
+.csv-step button.pro-validate i.fa-times-circle,
+.csv-step button.pro-save i.fa-times-circle,
+.csv-step div button i.fa-times-circle{
+    color: #d9534f;
+}
+
+@keyframes spin {
+    100% {
+        transform:rotate(360deg);
+    }
+}

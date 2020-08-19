@@ -1,0 +1,27 @@
+.modal_body{
+    padding: 2em 0 !important;
+}
+
+.confirm-content{
+    word-break: break-word;
+    padding: 1em 0;
+}
+
+.custom_alert{
+    display: inline-block;
+    padding: .3em .6em;
+    margin: .3em;
+}
+
+.user_to_add, .user_to_remove{
+    cursor: pointer;
+}
+
+.hide-element{
+    display: none;
+}
+
+.search-people-container{
+    max-height: 400px;
+    overflow: auto;
+}

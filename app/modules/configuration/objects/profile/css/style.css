@@ -1,0 +1,146 @@
+.card{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .6);
+    border-radius: 11px;
+    margin: 1em 0;
+    padding: 0;
+    overflow: hidden;
+}
+.intern_{
+    padding: .5em;
+}
+.no-resize{
+    resize: none;
+}
+.boxes{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.all_card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .3em 0;
+    flex-wrap: wrap;
+}
+.all_card>input{
+    width: 10%;
+}
+.no_wrap{
+    flex-wrap: nowrap !important;
+}
+.custom_card-header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.one_line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.space-lr div{
+    margin: 0 .3em !important;
+}
+.block{
+    display: block !important;
+}
+.mr-all{
+    margin: .4em .3em;
+}
+.two_or{
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5em;
+}
+.flex_center{
+    justify-content: center;
+    align-items: center;
+}
+.no_visible{
+    display: none;
+}
+input:checked + .slider{
+    background: #0052b3 !important;
+}
+.w100{
+    width: 100%;
+}
+.card-header{
+    display: flex;
+    flex-direction: row;
+}
+.card_image{
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    background: rgba(0,0,0, .3);
+    position: relative;
+}
+.card_image > img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.card-header > .card_header-body{
+    padding: .5em;
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card_header-body div p{
+    word-break: break-word;
+}
+
+@media (max-width: 1085px) {
+    .card_image{
+        height: auto;
+        max-height: 100%;
+    }
+}
+@media (max-width: 425px){
+    .card_image{
+        height: 200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .card-header{
+        flex-direction: column;
+    }
+    .all_card > div{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.modal-hml-body{
+    width: 100%;
+}
+.modal-hml-body > div > button{
+    float: right;
+}
+
+.card_desc p{
+    max-width: 300px;
+    word-break: break-word;
+    width: 300px;
+    color: rgba(0,0,1, .99);
+}
+.auto_margin{
+    margin: 0 auto !important;
+}
+.tab-pane{
+    padding: .5em;
+}

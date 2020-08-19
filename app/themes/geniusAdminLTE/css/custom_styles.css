@@ -1,0 +1,22 @@
+.color-menu_color{color: #339bc9;}
+.color-menu_background{background: #339bc9;}
+.main-sidebar{ background: linear-gradient(#339bc9, #04080e) !important;} .navbar-static-top, .fa-bars{ background: #339bc9 !important;} .main-header > a{ background: none !important;}
+.color-menu-elements_color{color: #afd02e;}
+.color-menu-elements_background{background: #afd02e;}
+.treeview>ul{ background: #afd02e !important;}
+.color-deg_color{color: #04080e;}
+.color-deg_background{background: #04080e;}
+.color-menu-text_color{color: #ffffff;}
+.color-menu-text_background{background: #ffffff;}
+.treeview > a, .user-menu > a, .treeview-menu > li > a, .sidebar-menu > .header{color: #ffffff !important;} .treeview-menu > li > a:hover{background: rgba(0,0,0, .7) !important; color: rgba(255,255,255, .7) !important;}
+.color-menu-active_color{color: #323442;}
+.color-menu-active_background{background: #323442;}
+.menu-open > a, .sidebar-menu > .header{background: #323442 !important;} .treeview > a > span:hover{background: #323442 !important;} .treeview>a:hover{background: #323442 !important;} .treeview-menu > li > a:hover{background: #323442 !important;} 
+.color-title_color{color: #afd02e;}
+.color-title_background{background: #afd02e;}
+.title-page{background: #afd02e !important;}
+.color-title-text_color{color: #ffffff;}
+.color-title-text_background{background: #ffffff;}
+.title-page{color: #ffffff !important;}
+.color-start-bkg_color{color: #1e282c;}
+.color-start-bkg_background{background: #1e282c;}
