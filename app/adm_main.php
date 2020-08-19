@@ -44,7 +44,9 @@ if(!empty($module) && !empty($ventana)){
 					if(!empty($method))
 						$action .= "&mth={$method}";
 
-					$arrParams = $request->query->all();
+					$arrParamsG = $request->query->all();
+                    $arrParamsP = $request->request->all();
+                    $arrParams = array_merge($arrParamsG, $arrParamsP);
 					$objC = new $strClass($arrParams);
 					$objC->setStrAction($action);
 					if(!empty($method)){

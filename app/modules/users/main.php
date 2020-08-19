@@ -5,7 +5,7 @@
  * Date: 07/06/17
  * Time: 15:07
  */
-
+global $lang, $cfg, $config;
 if (strstr($_SERVER["PHP_SELF"], "/modules/"))  die ("You can't access this file directly...");
 
 include_once("modules/users/lang/msg_".check_lang($cfg["core"]["lang"]).".php" );
@@ -54,10 +54,5 @@ $config["admmenu"][$lang["USER_ORGANIZATION_CHART"]]["module"] = "Site Admin";
 $config["admmenu"][$lang["USER_ORGANIZATION_CHART"]]["name"] = $lang["USER_ORGANIZATION_CHART"];
 $config["admmenu"][$lang["USER_ORGANIZATION_CHART"]]["icon"] = "fa-bar-chart";
 
-$config["admmenu"][$lang["USER_COMMERCE"]]["file"] = global_function::createLink("users", "user_merchanting");
-$config["admmenu"][$lang["USER_COMMERCE"]]["class"] = "users/user_merchanting";
-$config["admmenu"][$lang["USER_COMMERCE"]]["module"] = "Site Admin";
-$config["admmenu"][$lang["USER_COMMERCE"]]["name"] = $lang["USER_COMMERCE"];
-$config["admmenu"][$lang["USER_COMMERCE"]]["icon"] = "fa fa-picture-o";
 
 //--------------------ACCESO PARA COLOCAR PUESTO AL USUARIO----------------
