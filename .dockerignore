@@ -1,0 +1,11 @@
+*.log
+.git
+.gitignore
+.dockerignore
+Dockerfile
+vendor
+*.sql
+*.mwb
+tools/
+README.md
+
